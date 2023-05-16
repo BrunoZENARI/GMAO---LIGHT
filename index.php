@@ -1,6 +1,6 @@
 <?php
     // var_dump($_GET['id']);
-    if (isset($_GET['id']) && !empty($_GET['id'])){
+    if (isset($_GET['username']) && istt($_GET['password'])){
         require_once('connect.php');
 
 ?>

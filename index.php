@@ -1,8 +1,11 @@
 <?php
-    // var_dump($_GET['id']);
-    if (isset($_GET['username']) && istt($_GET['password'])){
-        require_once('connect.php');
-
+  // Initialiser la sessiontypepassword
+  session_start();
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+    exit(); 
+  }
 ?>
 
 <!DOCTYPE html>
@@ -15,53 +18,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
-<body>
-    <header>
-        <h1>GMAO - LIGHT </h1>
-    </header>
+    <body>
+        <header>
+                <figure>
+                    <a href="index.php"><img src="./img/pngegg.png" alt="home"></a>
+                </figure>
+                <h1>GMAO - LIGHT </h1>
+        </header>
 
-    <main class="login-page">
-        <section class="container-login">
-            <div class="element-login">
-                <h1>LOGIN</h1>
-            </div>
-            <div class="element-login">
-                <input type="text" id="utilisateur" placeholder="Utilisateur">
-            </div>
-
-            <label>
-                <div class="element-login">
-                    <input type="password" id="password" placeholder="Mot de passe" minlength="8" required>
+        <main>
+            <section class="list">
+                <div class="big-square">
+                    <h2>Nombre d'ampoules remplacées</h2>
+                    <h3>75%</h3>
+                    <h3><a href="./list.php">Historique</a></h3>
                 </div>
 
-                    <!--ICONES OEIL-->
-                <div class="password-icon">
-                    <i class="bi bi-eye"></i>
-                </div>
-            </label>
-
-            <div class="element-login">
-                <input type="checkbox" id="remember" name="remenber" value="remember">
-                <label for="remenber" id="remember-me">Remember me</label>
-            </div>
-            <div class="element-login">
-                <input type="submit" value="LOGIN" id="Envoyer_login">
-            </div>             
-
-        </section>
-    </main>
-
-    <footer>
-        <div class="copyright-contact">
-            <p>@Copyright</p>
-        </div>
-        <div class="copyright-contact"></div>
-        <div class="copyright-contact">
-            <p><a href="./contact.html">Contact</a></p>
-        </div> 
-    </footer>
-
-    <script src="./script.js"></script>
-    <!-- <a href="https://fr.rs-online.com/web/p/ampoules-led/2317015?cm_mmc=FR-PLA-DS3A-_-google-_-CSS_FR_FR_Eclairage_Whoop-_-(FR:Whoop!)+Ampoules+LED+(2)-_-2317015&matchtype=&pla-304251699511&gclid=Cj0KCQjwsIejBhDOARIsANYqkD3cnOmCQR1EKiZqq5ZAjXrGqGC1az3mbTkap0vXbTuPKZt4ACuJ9CEaAlmZEALw_wcB&gclsrc=aw.ds"></a> -->
-</body>
+                <p><a href="./logout.php">Déconnexion</a></p>
+            </section>
+        </main>
+        <script src="./script.js"></script>
+        <!-- <a href="https://fr.rs-online.com/web/p/ampoules-led/2317015?cm_mmc=FR-PLA-DS3A-_-google-_-CSS_FR_FR_Eclairage_Whoop-_-(FR:Whoop!)+Ampoules+LED+(2)-_-2317015&matchtype=&pla-304251699511&gclid=Cj0KCQjwsIejBhDOARIsANYqkD3cnOmCQR1EKiZqq5ZAjXrGqGC1az3mbTkap0vXbTuPKZt4ACuJ9CEaAlmZEALw_wcB&gclsrc=aw.ds"></a> -->
+    </body>
 </html>

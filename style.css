@@ -9,6 +9,7 @@ body{
 
 main{
   margin: 0;
+  padding: 1em 1em;
   height: 100%;
 }
 
@@ -211,7 +212,81 @@ label .password-icon:hover{
 }
 
 .list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+}
+
+.big-square{
+  background-color: #e8f2f7;
+  width: 90vw;
+  border-radius: 25px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15);
+}
+
+.big-square h3{
+  padding: .5em 0;
+}
+
+.outer{
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+
+.inner{
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+              inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+              -0.5px -0.5px 0px rgba(255,255,255,1),
+              0.5px 0.5px 0px rgba(0,0,0,0.15),
+              0px 12px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.pourcent{
+  position: relative;
+}
+
+svg{
+  width: 150px;
+  height: 150px;
+  /* padding: 1em 1em; */
+}
+
+svg circle{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 15px;
+  transform: translate(15px, 15px);
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+  stroke-linecap: round;
+  
+}
+
+svg circle:nth-child(2){
+  stroke: #7bc9f3;
+  stroke-dashoffset: 0;
+}
+
+svg circle:nth-child(3){
+  animation: circle 2s forwards;
+}
+
+
+@keyframes circle {
+  to {
+    stroke-dashoffset: 95;
+  }
+}
+
+span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-weight: 700;
+  color: #0b2736;
 }
 
 
@@ -222,6 +297,15 @@ footer{
   /* vertical-align: bottom; */
   height: 8vh;
   text-align: center;
+  bottom: 0;
+}
+
+.footer-gmao{
+  position: relative;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
 }
 
@@ -276,5 +360,9 @@ p.errorMessage {
 
   .element-login-register:nth-last-child(1) a{
     color: black;
+  }
+
+  .big-square{
+    width: 25vw;
   }
 }

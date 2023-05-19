@@ -30,13 +30,30 @@
             <section class="list">
                 <div class="big-square">
                     <h2>Nombre d'ampoules remplacées</h2>
-                    <h3>75%</h3>
+                    <div class="pourcent">
+                        <svg>
+                        <defs>
+                                <linearGradient id="GradientColor">
+                                    <stop offset="0%" stop-color="#30acee" />
+                                    <stop offset="100%" stop-color="#0b2736" />
+                                </linearGradient>
+                        </defs>
+                        <circle cx="60px" cy="60px" r="60px"></circle>
+                        <circle cx="60px" cy="60px" r="60px"></circle>
+                        </svg>
+                        <span id="number"></span>
+                    </div>
+                    
                     <h3><a href="./list.php">Historique</a></h3>
                 </div>
 
-                <p><a href="./logout.php">Déconnexion</a></p>
+                
             </section>
         </main>
+
+        <footer class="footer-gmao">
+            <div><a href="./logout.php">Déconnexion</a></div>
+        </footer>
         <script src="./script.js"></script>
         <!-- <a href="https://fr.rs-online.com/web/p/ampoules-led/2317015?cm_mmc=FR-PLA-DS3A-_-google-_-CSS_FR_FR_Eclairage_Whoop-_-(FR:Whoop!)+Ampoules+LED+(2)-_-2317015&matchtype=&pla-304251699511&gclid=Cj0KCQjwsIejBhDOARIsANYqkD3cnOmCQR1EKiZqq5ZAjXrGqGC1az3mbTkap0vXbTuPKZt4ACuJ9CEaAlmZEALw_wcB&gclsrc=aw.ds"></a> -->
     </body>

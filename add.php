@@ -11,7 +11,6 @@ if ($_POST){
         $floor = strip_tags($_POST['floor']);
         $position = strip_tags($_POST['position']);
         $price = strip_tags($_POST['price']);
-        $checkbox1 = strip_tags($_POST['checkbox1']);
 
 
         $sql = "INSERT INTO intervention (dating, floor, position, price) VALUES (:dating, :floor, :position, :price)";

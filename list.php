@@ -2,11 +2,12 @@
     require_once('connect.php');
     session_start();
 
-    $sql = "SELECT * FROM intervention";
+    $sql = "SELECT * FROM intervention ORDER BY dating ASC";
     $query = $db->prepare($sql);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     
+
 
     require_once('./close.php');
     include "includes/header.php";

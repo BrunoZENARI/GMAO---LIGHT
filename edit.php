@@ -83,8 +83,8 @@
                     </table>
 
                     <div class="element-list">
-                        <input type="hidden" value="<?= $inter['id'] ?>" name="id">
-                        <input type="submit" value="Envoyer" id="envoyer">
+                        <input type="hidden" value="<?= $inter['id'] ?>" name="id" >
+                        <input type="submit" value="Envoyer" id="envoyer" onclick="return confirm('Etes-vous certain de vouloir modifier l intervention n°<?php echo $inter['id']; ?>');">
                     </div>
                 </form>
             </section>                            

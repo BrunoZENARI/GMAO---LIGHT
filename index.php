@@ -19,6 +19,7 @@
     <title>Document</title>
 </head>
     <body>
+        <!-- Penser à faire des includes pour le header et le footer -->
         <header>
                 <figure>
                     <a href="index.php"><img src="./img/pngegg.png" alt="home"></a>

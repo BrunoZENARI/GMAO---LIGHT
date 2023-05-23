@@ -25,3 +25,5 @@ setInterval(() => {
     number.innerHTML = counter + "%";
   }
 }, 15);
+
+// fonction toast

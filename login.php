@@ -76,7 +76,7 @@
                     </div>
                     <a href="./register.php">S'INSCRIRE</a>
                     <div class="element-login">
-                        <input type="submit" value="LOGIN" name="submit" id="Envoyer_login">
+                        <input type="submit" value="LOGIN" name="submit" id="Envoyer">
                     </div>
                     <?php if (! empty($message)) { ?>
                     <p class="errorMessage"><?php echo $message; ?></p>

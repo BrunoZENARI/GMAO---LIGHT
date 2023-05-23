@@ -3,7 +3,7 @@
     session_start();
 
     if (!empty($_POST)){
-    
+
         if (isset($_POST['username']) && isset($_POST['pass'])){
 
             $username = stripslashes($_REQUEST['username']);
@@ -23,7 +23,7 @@
             $user = mysqli_fetch_assoc($result);
             // vérifier si l'utilisateur est un administrateur ou un utilisateur
             if ($user['genre'] == 'admin') {
-            header('location: admin/home.php');		  
+            header('location: home.php');		  
             }else{
             header('location: index.php');
             }
@@ -32,22 +32,8 @@
         }
         }
     }
+    include "includes/header.php";
 ?>
-      
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <title>Document</title>
-</head>
-    <body>
-        <header>
-            <h1>GMAO - LIGHT </h1>
-        </header>
 
         <main class="login-page">
             <section >
@@ -85,17 +71,6 @@
             </section>
         </main>
 
-        <footer>
-            <div class="copyright-contact">
-                <p>@Copyright</p>
-            </div>
-            <div class="copyright-contact"></div>
-            <div class="copyright-contact">
-                <p class="entry"><a href="./contact.html">Contact</a></p>
-            </div> 
-        </footer>
-
-        <script src="./script.js"></script>
-        <!-- <a href="https://fr.rs-online.com/web/p/ampoules-led/2317015?cm_mmc=FR-PLA-DS3A-_-google-_-CSS_FR_FR_Eclairage_Whoop-_-(FR:Whoop!)+Ampoules+LED+(2)-_-2317015&matchtype=&pla-304251699511&gclid=Cj0KCQjwsIejBhDOARIsANYqkD3cnOmCQR1EKiZqq5ZAjXrGqGC1az3mbTkap0vXbTuPKZt4ACuJ9CEaAlmZEALw_wcB&gclsrc=aw.ds"></a> -->
-    </body>
-</html>
+<?php
+include "includes/footer_home.php";
+?>        

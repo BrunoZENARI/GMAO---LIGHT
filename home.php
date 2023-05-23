@@ -6,21 +6,20 @@
 		header("Location: login.php");
 		exit(); 
 	}
+	include "includes/header.php";
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-	<link rel="stylesheet" href="../style.css" />
-	</head>
-	<body>
+	<main class="list-page">
 		<div class="sucess">
 		<h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
 		<p>C'est votre espace admin.</p>
-		<a href="add_user.php">Add user</a> | 
+		<a href="add.user.php">Add user</a> | 
 		<a href="#">Update user</a> | 
 		<a href="#">Delete user</a> | 
 		<a href="../logout.php">Déconnexion</a>
 		</ul>
 		</div>
-	</body>
-</html>
+	</main>
+
+<?php
+include "includes/footer_home.php";
+?>

@@ -6,49 +6,12 @@
     $query = $db->prepare($sql);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    // echo "<pre>";
-    // print_r($result);
-    // echo "</pre>";
     
-    // $_SESSION["id"] = $id;
-    // if ($_POST){
-
-    //     var_dump($_POST);
-    // };
-
-    // {
-    //     for ($i=0; $i < count($result); $i++){
-    //         if (isset($_POST["checkboxDel"]))
-    //     }
-
-    // $ids = $_POST["id"];
-    // echo "<pre>";
-    // print_r($ids);
-    // echo "</pre>";
-    // $final = $db->prepare("DELETE  FROM intervention WHERE Id IN ($ids)");
-    // $final->execute();
-    // }
 
     require_once('./close.php');
+    include "includes/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <header>
-            <figure>
-                <a href="index.php"><img src="./img/pngegg.png" alt="home"></a>
-            </figure>
-            <h1>GMAO - LIGHT </h1>
-        </header>
 
         <main class="list-page">
             <section>
@@ -106,13 +69,6 @@
                 </form>
             </section>
         </main>  
-        
-        <footer class="footer-gmao">
-            <div><a href="./logout.php">Déconnexion</a></div>
-        </footer>
-
-        <script src="./script.js"></script>
-
-    </body>
-
-</html>
+<?php
+include "includes/footer.php";
+?>

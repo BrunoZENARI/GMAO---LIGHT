@@ -1,6 +1,6 @@
 <?php
     require('config.php');
-    include "includes/header.php";
+    include "./header.php";
 
     if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['pass'])){
             // récupérer le nom d'utilisateur 
@@ -46,7 +46,7 @@
                             <input type="submit" name="submit" value="S'inscrire" id="Envoyer_login">
                         </div>
                         <div class="element-login-register">
-                            <p class="box-register">Déjà inscrit ? <a href="login.php">Connectez-vous ici</a></p>
+                            <p>Déjà inscrit ? <a href="login.php" class="link-ins">Connectez-vous ici</a></p>
                         </div>
                     </form>
                           
@@ -57,5 +57,5 @@
         </main>
 <?php 
 } 
-include "includes/footer_home.php";
+include "./footer_home.php";
 ?>

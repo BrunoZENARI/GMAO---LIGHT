@@ -32,7 +32,7 @@
         }
         }
     }
-    include "includes/header.php";
+    include "./header.php";
 ?>
 
         <main class="login-page">
@@ -60,7 +60,7 @@
                         <input type="checkbox" id="remember" name="remenber" value="remember">
                         <label for="remenber" id="remember-me">Remember me</label>
                     </div>
-                    <a href="./register.php">S'INSCRIRE</a>
+                    <a href="./register.php" class="link-ins">S'INSCRIRE</a>
                     <div class="element-login">
                         <input type="submit" value="LOGIN" name="submit" id="Envoyer">
                     </div>
@@ -72,5 +72,5 @@
         </main>
 
 <?php
-include "includes/footer_home.php";
+include "./footer_home.php";
 ?>        

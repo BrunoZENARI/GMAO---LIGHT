@@ -1,6 +1,6 @@
 <?php
   require('config.php');
-  include "includes/header.php";
+  include "./header.php";
   
       if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['type'], $_REQUEST['password'])){
         // récupérer le nom d'utilisateur 
@@ -48,5 +48,5 @@
         </form>
 <?php
 }
-include "includes/footer_home.php";
+include "./footer_home.php";
 ?>

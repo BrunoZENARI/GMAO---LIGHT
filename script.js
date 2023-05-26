@@ -1,4 +1,19 @@
-import "toastify-js/src/toastify.css";
+/* Toasts */
+function Toasts() {
+  // Get the snackbar DIV
+  let x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000);
+  }, 3000);
+}
 
 /*  fonction affichage mot de passe Login   */
 let eyeandoff = document.querySelector(".bi");
@@ -26,20 +41,4 @@ setInterval(() => {
     counter += 1;
     number.innerHTML = counter + "%";
   }
-}, 16);
-
-// fonction toast
-Toastify({
-  text: "Intervention supprimer",
-  duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "left", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "linear-gradient(to right, #00b09b, #96c93d)",
-  },
-  onClick: function () {}, // Callback after click
-}).showToast();
+}, 15);

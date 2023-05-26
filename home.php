@@ -6,7 +6,7 @@
 		header("Location: login.php");
 		exit(); 
 	}
-	include "includes/header.php";
+	include "./header.php";
 ?>
 	<main class="list-page">
 		<div class="sucess">
@@ -21,5 +21,5 @@
 	</main>
 
 <?php
-include "includes/footer_home.php";
+include "./footer_home.php";
 ?>

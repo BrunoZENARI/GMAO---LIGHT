@@ -7,7 +7,7 @@
     exit(); 
   }
 
-  include "includes/header.php";
+  include "./header.php";
 ?>
 
 
@@ -37,6 +37,6 @@
             </section>
         </main>
 <?php
-include "includes/footer.php";
+include "./footer.php";
 ?>
         

@@ -26,7 +26,7 @@ if ($_POST){
         header("Location: list.php");
     }
 }
-    include "includes/header.php";
+    include "./header.php";
 ?>
 
 
@@ -76,12 +76,12 @@ if ($_POST){
                         
                     </table>
                                     
-                    <input type="submit" value="Envoyer">    
+                    <input type="submit" value="Envoyer" id="Envoyer">    
                     
                 </form>
             </section>
         </main>
 
 <?php
-include "includes/footer_home.php";
+include "./footer.php";
 ?>

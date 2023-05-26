@@ -13,7 +13,7 @@
             $query->bindValue(':dating', $dating, PDO::PARAM_STR);
             $query->bindValue(':floor', $floor, PDO::PARAM_INT);
             $query->bindValue(':position', $position, PDO::PARAM_STR);
-            $query->bindValue(':price', $price, PDO::PARAM_INT);
+            $query->bindValue(':price', $price);
             $query->execute();
             require_once('./close.php');
             header('Location: list.php');
@@ -35,28 +35,38 @@
     } else {
         header('Location: list.php');
     }
-    include "includes/header.php";
+    include "./header.php";
 ?>
 
 
         <main class="list-page">
             <section>
-                <form method="post" class="container-list">
+                <form method="post" class="container-list-edit">
                     <h1>Modification des données de l'intervention : <?= $inter['id'] . " date : " . $inter['dating'] ?></h1>
-                    <table>
+                    <table class="edit">
                         <thead>
                             <th>id</th>
                             <th>Date</th>
                             <th>Étage</th>
-                            <th>Exposition</th>
+                            <th>Expo</th>
                             <th>Prix</th>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><?= $inter['id'] ?></td>
+                                
+                                <td>
+                                    <!-- <label for="id" class="edit-mobile">Id</label> -->
+                                    <?= $inter['id'] ?>
+                                </td>
                                 <!-- <input type="hidden" name="id" value="<?= $inter['id'] ?>"> -->
-                                <td><input type="date" name="dating" required value="<?= $inter['dating'] ?>"></td>
-                                <td><input type="number" name="floor" required min="0" max="8" list="defaultFloor" value="<?= $inter['floor'] ?>")></td>
+                                <td>
+                                    <!-- <label for="id" class="edit-mobile">Date</label> -->
+                                    <input type="date" name="dating" required value="<?= $inter['dating'] ?>">
+                                </td>
+                                <td>
+                                    <!-- <label for="id" class="edit-mobile">Étage</label> -->
+                                    <input type="number" name="floor" required min="0" max="8" list="defaultFloor" value="<?= $inter['floor'] ?>")>
+                                </td>
                                     <datalist id="defaultFloor">
                                         <option value="0"></option>
                                         <option value="1"></option>
@@ -68,14 +78,20 @@
                                         <option value="7"></option>
                                         <option value="8"></option>
                                     </datalist>
-                                <td><input type="text" name="position" required list="defaultPosition" value="<?= $inter['position'] ?>")></td>
+                                <td>
+                                    <!-- <label for="id" class="edit-mobile">Exposition</label>     -->
+                                    <input type="text" name="position" required list="defaultPosition" value="<?= $inter['position'] ?>")>
+                                </td>
                                     <datalist id="defaultPosition">
                                         <option value="Nord"></option>
                                         <option value="Sud"></option>
                                         <option value="Est"></option>
                                         <option value="Ouest"></option>
                                     </datalist>
-                                <td><input type="number" step="0.01" name="price" required min="0" value="<?= $inter['price'] ?>")></td>
+                                <td>
+                                    <!-- <label for="id" class="edit-mobile">Prix</label>     -->
+                                    <input type="number" step="0.01" name="price" required min="0" value="<?= $inter['price'] ?>")>
+                                </td>
                                 <!-- <td><input type="checkbox" name="checkboxDel" value="<?= $inter['id'] ?>"></td> -->
                             </tr> 
                         </tbody>
@@ -84,12 +100,12 @@
 
                     <div class="element-list">
                         <input type="hidden" value="<?= $inter['id'] ?>" name="id" >
-                        <input type="submit" value="Envoyer" id="envoyer" onclick="return confirm('Etes-vous certain de vouloir modifier l intervention n°<?php echo $inter['id']; ?>');">
+                        <input type="submit" value="Envoyer" id="Envoyer" onclick="return confirm('Etes-vous certain de vouloir modifier l intervention n°<?php echo $inter['id']; ?>');">
                     </div>
                 </form>
             </section>                            
         </main>
 
 <?php
-include "includes/footer_home.php";
+include "./footer.php";
 ?>

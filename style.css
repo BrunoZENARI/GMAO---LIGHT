@@ -114,6 +114,11 @@ label .password-icon:hover{
   margin-top: 3em;
 }
 
+.element-login-register:nth-last-child(1){
+  margin-top: 0;
+  color: white;
+}
+
 .element-login input{
   height: 50px;
   width: 65vw;
@@ -142,11 +147,6 @@ label .password-icon:hover{
   color: #fff;
   text-shadow: 1px 0px 5px black;
   font-size: xx-large ;
-}
-
-.element-login-register:nth-last-child(1), .element-login-register:nth-last-child(1) a{
-  margin-top: 0;
-  color: white;
 }
 
 #remember{
@@ -299,6 +299,7 @@ span{
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 60%;
 }
 
 table {
@@ -336,6 +337,7 @@ tbody tr{
   padding-top: 1em;
   flex-direction: column;
   justify-content: space-between;
+  gap: 2em;
 }
 
 .container-list-add{
@@ -345,16 +347,31 @@ tbody tr{
   align-items: center;
   padding-top: 1em;
   flex-direction: column;
+  gap: 2em;
 }
 
 .container-list-add input{
-  width: 15vw;
+  width: 20vw;
+}
+
+.container-list-edit{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.container-list-edit input{
+  width: 19vw;
 }
 
 .element-list{
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 #delete{
@@ -375,8 +392,8 @@ tbody tr{
 .add{
   display: table-cell;
   vertical-align: middle;
-  width: 80vw;
-  height: 20vh;
+  width: 15em;
+  height: 6em;
   font-size: 1.5em;
   color: #FFFFFF;
   background-color: #0b2736;
@@ -384,9 +401,51 @@ tbody tr{
   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15);
 }
 
-a{
+a:link{
   text-decoration: none;
+  color: #1C6993;
 }
+
+a:visited{
+  text-decoration: none;
+  color: #1C6993;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #1C6993;
+}
+
+a:active{
+  text-decoration: none;
+  color: #1C6993;
+}
+
+.link-a{
+  color: white;
+  cursor: pointer;
+}
+
+.link-a:visited{
+  color: white;
+}
+
+.link-ins{
+  color: black;
+  transition:  1s;
+  transition-delay: ease-in-out;
+}
+
+.link-ins:visited{
+  color: black;
+}
+
+.link-ins:hover{
+  transform: scale(1.5);
+  font-weight: 900;
+}
+
+
 
 footer{
   position: relative;
@@ -434,10 +493,61 @@ p.errorMessage {
   border-radius: 3px;
 }
 
-@media screen and (min-width: 991px){
+/* Classes TOATS */
+#snackbar{
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: rgb(158, 240, 158);
+  color: rgb(9, 94, 9);
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50px;
+}
+
+#snackbar.show{
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 50px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 50px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 50px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 50px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+
+
+/* Classes TOATS END*/
+
+@media screen and (min-width: 800px){
   /* main{
     height: 100vh;
   } */
+
+  .edit-mobile{
+    display: none;
+  }
+
   header h1{
     font-size: 64px;
   }
@@ -458,7 +568,7 @@ p.errorMessage {
     font-size: large;
   }
 
-  .element-login-register:nth-last-child(1) a{
+  .element-login-register:nth-last-child(1) p{
     color: black;
   }
 
@@ -485,6 +595,10 @@ p.errorMessage {
   }
 
   .container-list-add input{
+    width: auto;
+  }
+
+  .container-list-edit input{
     width: auto;
   }
 }

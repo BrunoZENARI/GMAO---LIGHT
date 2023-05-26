@@ -6,13 +6,12 @@
     $query = $db->prepare($sql);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    // $id = $db->last
     
-
-
     require_once('./close.php');
-    include "includes/header.php";
+    include "./header.php";
 ?>
-
 
         <main class="list-page">
             <section>
@@ -23,7 +22,7 @@
                             <th>id</th>
                             <th>Date</th>
                             <th>Étage</th>
-                            <th>Exposition</th>
+                            <th>Expo</th>
                             <th>Prix</th>
                             <th>Modif</th>
                             <th>Del</th>
@@ -43,10 +42,11 @@
                                 <td><?= $inter['position'] ?></td>
                                 <td><?= $inter['price'] ?></td>
                                 <td>
-                                    <a href="edit.php?id=<?= $inter['id'] ?>">Modifier</a>
+                                    <a href="edit.php?id=<?= $inter['id'] ?>">Modif</a>
                                 </td>
                                 <td>
-                                    <a href="./delete.php?id=<?= $inter['id']; ?>" onclick="return confirm('Etes-vous certain de vouloir supprimer l intervention n°<?php echo $inter['id']; ?>');">Supprimer</a>
+                                    <button id="Del" onclick="Toasts(); return confirm('Etes-vous certain de vouloir supprimer l intervention n°<?php echo $inter['id']; ?>')">Del</button>
+                                    < id="Del" href="./delete.php?id=<?= $inter['id']; ?>"
                                 </td>
                                 <!-- <td><input type="checkbox" name="checkboxDel" value="<?= $inter['id'] ?>"></td> -->
                             </tr> 
@@ -62,14 +62,16 @@
                         <input type="submit" value="Delete" id="delete">
                     </div> -->
 
-                    <a href="./add.php" class="add">
-                        
-                            <h2>Ajouter INTERVENTION</h2>               
-                        
-                    </a>
+                    <div id="snackbar">Intervention Supprimée</div>
+                    <input type="button" class="add link-a" value="Ajouter INTERVENTION" onclick="window.location.href='add.php';">
+                    
                 </form>
+               
+                <!-- <button onclick="Toasts()">Show Snackbar</button> -->
+                
+                
             </section>
         </main>  
 <?php
-include "includes/footer.php";
+include "./footer.php";
 ?>

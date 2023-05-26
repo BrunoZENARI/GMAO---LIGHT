@@ -60,7 +60,7 @@ if ($_POST){
                                         <option value="7"></option>
                                         <option value="8"></option>
                                     </datalist>
-                                <td><input type="text" name="position" required list="defaultPosition"></td>
+                                <td><input type="text" name="position" autocomplete required list="defaultPosition"></td>
                                     <datalist id="defaultPosition">
                                         <option value="Nord"></option>
                                         <option value="Sud"></option>

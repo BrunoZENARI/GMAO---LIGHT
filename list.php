@@ -19,7 +19,7 @@
                     <h1>Liste d'intervention</h1>    
                     <table>
                         <thead>
-                            <th>id</th>
+                            <!-- <th>id</th> -->
                             <th>Date</th>
                             <th>Étage</th>
                             <th>Expo</th>
@@ -35,7 +35,7 @@
                                 
                             ?>  
                             <tr>
-                                <td><?= $inter['id'] ?></td>
+                                <!-- <td><?= $inter['id'] ?></td> -->
                                 <!-- <input type="hidden" name="id" value="<?= $inter['id'] ?>"> -->
                                 <td><?= $inter['dating'] ?></td>
                                 <td><?= $inter['floor'] ?></td>

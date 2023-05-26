@@ -1,20 +1,3 @@
-/* Toasts */
-function Toasts() {
-  // Get the snackbar DIV
-  let x = document.getElementById("snackbar");
-
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () {
-    x.className = x.className.replace("show", "");
-    setTimeout(function () {
-      window.location.reload();
-    }, 1000);
-  }, 3000);
-}
-
 /*  fonction affichage mot de passe Login   */
 let eyeandoff = document.querySelector(".bi");
 const passwordField = document.querySelector("input[type=password]");

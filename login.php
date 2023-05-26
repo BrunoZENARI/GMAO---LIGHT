@@ -69,6 +69,7 @@
                     <?php } ?>  
                 </form>    
             </section>
+            <script src="./script.js"></script>
         </main>
 
 <?php

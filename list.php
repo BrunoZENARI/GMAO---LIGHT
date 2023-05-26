@@ -12,7 +12,7 @@
     require_once('./close.php');
     include "./header.php";
 ?>
-
+                    
         <main class="list-page">
             <section>
                 <form method="post" class="container-list">
@@ -45,8 +45,7 @@
                                     <a href="edit.php?id=<?= $inter['id'] ?>">Modif</a>
                                 </td>
                                 <td>
-                                    <button id="Del" onclick="Toasts(); return confirm('Etes-vous certain de vouloir supprimer l intervention n°<?php echo $inter['id']; ?>')">Del</button>
-                                    < id="Del" href="./delete.php?id=<?= $inter['id']; ?>"
+                                    <a href="delete.php?id=<?= $inter['id'] ?>" onclick="return confirm('Voulez-vous supprimer l intervention ?'); ">Del</a> 
                                 </td>
                                 <!-- <td><input type="checkbox" name="checkboxDel" value="<?= $inter['id'] ?>"></td> -->
                             </tr> 
@@ -57,6 +56,7 @@
                         </tbody>
                         
                     </table>
+
 <!--                                     
                     <div class="element-list">
                         <input type="submit" value="Delete" id="delete">
@@ -67,6 +67,12 @@
                     
                 </form>
                
+                <?php 
+                        if(isset($_SESSION["del"]["is_del"])) {
+                            echo "<script src='./toast.js'></script>";
+                            unset($_SESSION["del"]);
+                        }
+                    ?>
                 <!-- <button onclick="Toasts()">Show Snackbar</button> -->
                 
                 

@@ -33,10 +33,10 @@
                     <h3><a href="./list.php">Historique</a></h3>
                 </div>
 
-                
+                <script src="./script.js"></script>
             </section>
         </main>
 <?php
-include "./footer.php";
+// include "./footer.php";
 ?>
         
